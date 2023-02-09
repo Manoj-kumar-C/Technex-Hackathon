@@ -1,0 +1,74 @@
+*,*::before,*::after {
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: sans-serif;
+  }
+  
+  img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+  }
+  
+  .centered {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  .badge-wrap {
+    position: relative;
+    display: inline-block;
+    margin: 10px;
+  }
+  
+  .badge-with-number {
+    position: absolute;
+      color: #fff;
+      background-color: #f5424e;
+      font-size: 11px;
+      padding: 3px 10px;
+      border-radius: 8px;
+    top: -5px;
+    right: -5px;
+  }
+  
+  .badge-without-number {
+    position: absolute;
+      background-color: #f5424e;
+      font-size: 11px;
+      width: 10px;
+    height: 10px;
+      border-radius: 50%;
+    top: 0;
+    right: 0;
+  }
+  
+  .badge-without-number.with-wave {
+    animation-name: wave;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+  }
+  
+  .badge-without-number.changing-shape {
+    animation-name: changingShape;
+    animation-duration: 2s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    border-radius: 0;
+  }
+  
+  @keyframes wave {
+    0% {box-shadow: 0 0 0px 0px rgba(245, 66, 78, 0.5);}
+    100% {box-shadow: 0 0 0px 10px rgba(245, 66, 78, 0);}
+  }
+  
+  @keyframes changingShape {
+    0% {transform:rotate(0);border-radius: 0;}
+    50% {transform:rotate(360deg);border-radius: 50%;}
+    100% {transform:rotate(720deg);border-radius: 0;}
+  }
